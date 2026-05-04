@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Provence Wine Club logo">
+  <style>
+    @keyframes spin-seal {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .seal-spin {
+      transform-origin: 50px 50px;
+      animation: spin-seal 45s linear infinite;
+    }
+  </style>
+
+  <circle cx="50" cy="50" r="49.5" fill="none" stroke="#000" stroke-width="0.5"/>
+
+  <g class="seal-spin">
+    <path id="circlePath" d="M 50,50 m -41,0 a 41,41 0 1,1 82,0 a 41,41 0 1,1 -82,0" fill="none"/>
+    <text fill="#000" style="font-family: 'Libre Baskerville', serif; font-size: 8px; letter-spacing: 0.25em; text-transform: uppercase;">
+      <textPath href="#circlePath" startOffset="25%" text-anchor="middle">Provence Wine Club •</textPath>
+      <textPath href="#circlePath" startOffset="75%" text-anchor="middle">L'Art de Vivre •</textPath>
+    </text>
+  </g>
+
+  <circle cx="50" cy="50" r="32.5" fill="#fff"/>
+
+  <g transform="translate(17.5 30) scale(0.325)">
+    <circle cx="75" cy="22" r="14" fill="#f4cdbc" />
+    <g stroke="#555555" fill="none">
+      <path d="M 12 50 L 60 44 L 120 45 L 188 50" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 18 44 L 40 33 L 65 40" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 45 35 L 55 24 L 70 26 L 85 19 L 102 16 L 118 7 L 125 15 L 132 10" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 130 12 L 136 26 L 145 22 L 165 40 L 180 42" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 70 26 C 85 35, 105 37, 122 30" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 118 7 C 114 18, 110 24, 120 28" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 102 16 Q 95 24, 105 32" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 136 26 Q 130 33, 145 38" stroke-width="0.7" stroke-linecap="round" opacity="0.7"/>
+    </g>
+  </g>
+</svg>

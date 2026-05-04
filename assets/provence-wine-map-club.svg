@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" role="img" aria-label="Provence wine map with appellation areas">
+  <defs>
+    <style>
+      .bg { fill: #fdfbf9; }
+      .coast { fill: #dbe7f0; }
+      .land { fill: #f4efe9; stroke: #c9bcb0; stroke-width: 2; }
+      .river { fill: none; stroke: #b8cddd; stroke-width: 3; opacity: 0.9; }
+      .label { fill: #302b28; font-family: 'DM Sans', Arial, sans-serif; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .sub { fill: #6f655d; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; letter-spacing: 0.08em; }
+      .aix { fill: #c9c2f2; opacity: 0.92; }
+      .varois { fill: #f6c46d; opacity: 0.92; }
+      .cotes { fill: #f3e596; opacity: 0.95; }
+      .pierrevert { fill: #9bcbf2; opacity: 0.95; }
+      .baux { fill: #eca5c2; opacity: 0.95; }
+      .bandol { fill: #f2cf62; opacity: 0.95; }
+      .palette { fill: #f49c6b; opacity: 0.95; }
+      .cassis { fill: #9cc7d8; opacity: 0.95; }
+      .bellet { fill: #f7a35d; opacity: 0.95; }
+      .zone { stroke: #ffffff; stroke-width: 3; }
+      .zone-name { fill: #272320; font-family: 'DM Sans', Arial, sans-serif; font-size: 19px; font-weight: 500; letter-spacing: 0.04em; }
+      .title { fill: #1f1b19; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 62px; letter-spacing: 0.02em; }
+      .legend-t { fill: #4b433d; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; letter-spacing: 0.09em; text-transform: uppercase; }
+      .legend-s { fill: #2f2a27; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="920"/>
+  <path class="coast" d="M0 650 C180 610 250 620 410 650 C590 685 700 680 870 650 C1040 620 1170 610 1400 640 L1400 920 L0 920 Z"/>
+
+  <path class="land" d="M120 240 C180 160 310 120 470 130 C600 138 705 180 820 170 C980 154 1150 210 1230 330 C1290 420 1270 560 1180 620 C1090 680 950 700 790 680 C610 657 450 692 300 650 C180 616 120 530 108 440 C96 356 86 300 120 240 Z"/>
+
+  <path class="river" d="M195 370 C320 410 450 390 550 330 C650 272 740 255 850 285 C940 308 1050 292 1150 252"/>
+  <path class="river" d="M450 585 C560 560 650 560 740 575 C830 590 940 600 1060 585"/>
+
+  <path class="zone aix" d="M210 380 C260 300 370 260 470 280 C560 300 610 370 590 430 C570 490 480 520 400 520 C300 520 225 470 210 380 Z"/>
+  <path class="zone varois" d="M620 390 C700 325 825 340 900 400 C950 440 940 500 870 530 C780 570 650 548 610 490 C585 452 588 420 620 390 Z"/>
+  <path class="zone cotes" d="M860 345 C980 300 1120 330 1175 410 C1215 470 1200 560 1130 608 C1050 662 940 670 840 640 C735 608 680 520 700 450 C718 395 770 366 860 345 Z"/>
+  <path class="zone pierrevert" d="M560 205 C630 165 740 170 795 218 C840 256 830 310 770 332 C700 360 590 346 545 303 C510 271 512 229 560 205 Z"/>
+  <path class="zone baux" d="M185 315 C205 278 250 260 300 270 C340 278 355 304 336 330 C312 363 250 375 210 362 C185 353 173 338 185 315 Z"/>
+  <path class="zone bandol" d="M635 558 C680 535 760 538 804 566 C832 584 826 612 785 628 C735 648 658 642 628 618 C606 600 607 574 635 558 Z"/>
+  <path class="zone palette" d="M545 430 C565 415 595 416 612 432 C625 444 621 462 604 471 C579 484 548 477 538 460 C530 447 533 438 545 430 Z"/>
+  <path class="zone cassis" d="M560 528 C575 518 598 520 612 532 C622 540 620 553 606 560 C586 571 563 568 553 556 C545 547 548 535 560 528 Z"/>
+  <path class="zone bellet" d="M1188 332 C1212 316 1240 319 1254 338 C1268 358 1262 386 1238 401 C1211 418 1181 414 1168 392 C1157 375 1164 349 1188 332 Z"/>
+
+  <text class="title" x="84" y="100">Provence Wine Production Map</text>
+  <text class="sub" x="88" y="136">Appellations and key sub-zones in Provence, France</text>
+
+  <text class="zone-name" x="260" y="408">Coteaux d'Aix-en-Provence</text>
+  <text class="zone-name" x="650" y="456">Coteaux Varois en Provence</text>
+  <text class="zone-name" x="870" y="470">Cotes de Provence</text>
+  <text class="zone-name" x="585" y="255">Coteaux de Pierrevert</text>
+  <text class="zone-name" x="165" y="295">Les Baux-de-Provence</text>
+  <text class="zone-name" x="664" y="602">Bandol</text>
+  <text class="zone-name" x="554" y="423">Palette</text>
+  <text class="zone-name" x="558" y="522">Cassis</text>
+  <text class="zone-name" x="1178" y="320">Bellet</text>
+
+  <text class="label" x="880" y="744">Sub-zones</text>
+  <text class="legend-s" x="880" y="774">Cotes de Provence Sainte-Victoire</text>
+  <text class="legend-s" x="880" y="800">Cotes de Provence Frejus</text>
+  <text class="legend-s" x="880" y="826">Cotes de Provence Pierrefeu</text>
+  <text class="legend-s" x="880" y="852">Cotes de Provence La Londe</text>
+
+  <g transform="translate(1120 70)">
+    <circle cx="96" cy="96" r="90" fill="#f8f2ec" stroke="#1f1b19" stroke-width="2"/>
+    <circle cx="96" cy="96" r="56" fill="#fdfbf9"/>
+    <text x="96" y="21" text-anchor="middle" class="legend-t">PROVENCE WINE CLUB</text>
+    <text x="96" y="186" text-anchor="middle" class="legend-t">L'ART DE VIVRE</text>
+    <circle cx="64" cy="69" r="8" fill="#f4cdbc"/>
+    <g transform="translate(38 62)" stroke="#555555" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 8 34 L 48 30 L 98 31 L 146 34" stroke-width="1.1"/>
+      <path d="M 14 30 L 30 22 L 52 28" stroke-width="1.1"/>
+      <path d="M 34 24 L 42 16 L 55 17 L 67 13 L 79 11 L 92 5 L 99 11 L 106 8" stroke-width="1.1"/>
+      <path d="M 106 9 L 111 17 L 119 15 L 132 27 L 142 29" stroke-width="1.1"/>
+    </g>
+  </g>
+</svg>

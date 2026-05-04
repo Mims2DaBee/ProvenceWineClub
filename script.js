@@ -1,5 +1,6 @@
 (function () {
   'use strict';
+  const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
   /* ===== DOM ===== */
   const nav = document.querySelector('.nav');
@@ -41,16 +42,85 @@
   }
 
   /* ===== Forms ===== */
-  signupForm?.addEventListener('submit', (e) => {
+  const submitToGoogleSheets = async (payload) => {
+    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
+      throw new Error('Google Apps Script URL missing.');
+    }
+
+    const body = new URLSearchParams(payload);
+    const res = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body
+    });
+
+    if (!res.ok) {
+      throw new Error('Submission failed.');
+    }
+  };
+
+  signupForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert("Welcome to the list. You'll hear from us soon.");
-    signupForm.reset();
+    const submitBtn = signupForm.querySelector('button[type="submit"]');
+    const firstName = signupForm.querySelector('input[name="first_name"]')?.value?.trim() || '';
+    const email = signupForm.querySelector('input[name="email"]')?.value?.trim() || '';
+
+    if (!email) return;
+
+    submitBtn?.setAttribute('disabled', 'true');
+    const originalText = submitBtn?.textContent;
+    if (submitBtn) submitBtn.textContent = 'Submitting...';
+
+    try {
+      await submitToGoogleSheets({
+        form_type: 'newsletter_signup',
+        first_name: firstName,
+        email,
+        page: window.location.href,
+        submitted_at: new Date().toISOString()
+      });
+      alert("Thank you. You're on the list.");
+      signupForm.reset();
+    } catch (err) {
+      alert('Sorry, signup is not connected yet. Please add the Google Apps Script URL in script.js.');
+      console.error(err);
+    } finally {
+      submitBtn?.removeAttribute('disabled');
+      if (submitBtn && originalText) submitBtn.textContent = originalText;
+    }
   });
 
-  eventForm?.addEventListener('submit', (e) => {
+  eventForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert("Thank you. We'll be in touch about your event enquiry.");
-    eventForm.reset();
+    const submitBtn = eventForm.querySelector('button[type="submit"]');
+    const name = eventForm.querySelector('input[name="name"]')?.value?.trim() || '';
+    const email = eventForm.querySelector('input[name="email"]')?.value?.trim() || '';
+    const eventType = eventForm.querySelector('select[name="event_type"]')?.value?.trim() || '';
+
+    if (!email || !eventType) return;
+
+    submitBtn?.setAttribute('disabled', 'true');
+    const originalText = submitBtn?.textContent;
+    if (submitBtn) submitBtn.textContent = 'Sending...';
+
+    try {
+      await submitToGoogleSheets({
+        form_type: 'event_enquiry',
+        name,
+        email,
+        event_type: eventType,
+        page: window.location.href,
+        submitted_at: new Date().toISOString()
+      });
+      alert("Thank you. We'll be in touch about your event enquiry.");
+      eventForm.reset();
+    } catch (err) {
+      alert('Sorry, event form is not connected yet. Please add the Google Apps Script URL in script.js.');
+      console.error(err);
+    } finally {
+      submitBtn?.removeAttribute('disabled');
+      if (submitBtn && originalText) submitBtn.textContent = originalText;
+    }
   });
 
   /* ===== Scroll reveal ===== */
