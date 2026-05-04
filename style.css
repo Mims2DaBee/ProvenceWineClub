@@ -1347,11 +1347,15 @@ strong { font-weight: 700; }
 }
 .footer__logo-icon {
   display: block;
-  width: 92px;
-  height: auto;
+  width: 96px;
+  height: 96px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--ivory);
   margin-bottom: var(--s-sm);
-  opacity: 0.9;
-  filter: brightness(1.4);
+  opacity: 1;
+  filter: none;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.22);
 }
 .footer__logo {
   font-family: var(--ff-display);
