@@ -42,36 +42,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" aria-hidden="true" style="position:absolute;width:0;height:0">
-    <defs><symbol id="mountain-logo" viewBox="0 0 200 60">
-      <circle cx="75" cy="22" r="14" fill="#f4cdbc"/>
-      <g stroke="#555555">
-        <path d="M 12 50 L 60 44 L 120 45 L 188 50" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 18 44 L 40 33 L 65 40" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 45 35 L 55 24 L 70 26 L 85 19 L 102 16 L 118 7 L 125 15 L 132 10" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 130 12 L 136 26 L 145 22 L 165 40 L 180 42" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 70 26 C 85 35, 105 37, 122 30" stroke-width="0.6" stroke-linecap="round" opacity="0.7"/>
-        <path d="M 118 7 C 114 18, 110 24, 120 28" stroke-width="0.6" stroke-linecap="round" opacity="0.7"/>
-        <path d="M 102 16 Q 95 24, 105 32" stroke-width="0.6" stroke-linecap="round" opacity="0.7"/>
-        <path d="M 136 26 Q 130 33, 145 38" stroke-width="0.6" stroke-linecap="round" opacity="0.7"/>
-      </g>
-    </symbol></defs>
-  </svg>
-
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
       <div class="nav__left">
-        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Toggle menu">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu" type="button">
           <span class="nav__toggle-line"></span>
           <span class="nav__toggle-line"></span>
         </button>
       </div>
       <a href="index.html" class="nav__logo">
-        <svg class="nav__logo-icon" aria-hidden="true"><use href="#mountain-logo"/></svg>
-        <span class="nav__logo-text">
-          <span class="nav__logo-main">Èmilie Blanc</span>
-          <span class="nav__logo-sub">The Art of Rosé</span>
-        </span>
+        <img class="nav__logo-icon" src="assets/logo-pwc.svg" alt="" aria-hidden="true">
+        <span class="nav__logo-brand">PROVENCE WINE CLUB - L'Art de vivre en rosé</span>
+        <span class="nav__logo-caption">ESTABLISHED IN 2026 - SYDNEY</span>
       </a>
       <div class="nav__right"></div>
     </div>
@@ -81,8 +63,11 @@
         <span class="nav__drawer-close-line"></span>
       </button>
       <div class="nav__drawer-logo">
-        <svg class="nav__drawer-logo-icon" aria-hidden="true"><use href="#mountain-logo"/></svg>
-        <span class="nav__drawer-logo-text">Èmilie Blanc</span>
+        <img class="nav__drawer-logo-icon" src="assets/logo-pwc.svg" alt="" aria-hidden="true">
+        <span class="nav__drawer-logo-text">
+          <span class="nav__drawer-logo-main">PROVENCE WINE CLUB</span>
+          <span class="nav__drawer-logo-sub">L'ART DE VIVRE EN ROSÉ.</span>
+        </span>
       </div>
       <div class="nav__drawer-inner">
         <div class="nav__drawer-col">
@@ -253,8 +238,8 @@
     <div class="footer__inner">
       <div class="footer__top">
         <div class="footer__brand">
-          <svg class="footer__logo-icon" aria-hidden="true"><use href="#mountain-logo"/></svg>
-          <span class="footer__logo">Èmilie Blanc</span>
+          <img class="footer__logo-icon" src="assets/logo-pwc.svg" alt="" aria-hidden="true">
+          <span class="footer__logo">PROVENCE WINE CLUB</span>
           <p class="footer__tagline">The Art of Provence Rosé · Australia</p>
         </div>
         <div class="footer__links">
