@@ -27,9 +27,72 @@
   </script>
 </head>
 <body>
-  <main class="knowledge-page">
-    <article>
-      <h1>Emilie Blanc — Rosé Wine Expert in Australia</h1>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img class="nav__logo-icon" src="../assets/logo-pwc.svg" alt="" aria-hidden="true">
+        <span class="nav__logo-brand">PROVENCE WINE CLUB - L'Art de vivre en rosé</span>
+        <span class="nav__logo-caption">ESTABLISHED IN 2026 - SYDNEY</span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu" type="button">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__drawer" id="nav-drawer" aria-hidden="true">
+      <button class="nav__drawer-close" aria-label="Close menu" type="button">
+        <span class="nav__drawer-close-line"></span>
+        <span class="nav__drawer-close-line"></span>
+      </button>
+      <div class="nav__drawer-logo">
+        <img class="nav__drawer-logo-icon" src="../assets/logo-pwc.svg" alt="" aria-hidden="true">
+        <span class="nav__drawer-logo-text">
+          <span class="nav__drawer-logo-main">PROVENCE WINE CLUB</span>
+          <span class="nav__drawer-logo-sub">L'ART DE VIVRE EN ROSÉ.</span>
+        </span>
+      </div>
+      <div class="nav__drawer-inner">
+        <div class="nav__drawer-col">
+          <span class="nav__drawer-label">About</span>
+          <a href="../emilie-blanc.html" class="nav__drawer-link">Emilie Blanc</a>
+          <a href="../press.html" class="nav__drawer-link">Press</a>
+        </div>
+        <div class="nav__drawer-col">
+          <span class="nav__drawer-label">Discover</span>
+          <a href="../index.html#manifesto" class="nav__drawer-link">Our Story</a>
+          <a href="../index.html#provence" class="nav__drawer-link">Provence</a>
+          <a href="../index.html#education" class="nav__drawer-link">The Art of Rosé</a>
+          <a href="../index.html#faq" class="nav__drawer-link">FAQ</a>
+          <a href="../guides/provence-rose-wine.html" class="nav__drawer-link">Guides</a>
+        </div>
+        <div class="nav__drawer-col">
+          <span class="nav__drawer-label">Experience</span>
+          <a href="../index.html#lifestyle" class="nav__drawer-link">The Lifestyle</a>
+          <a href="../index.html#events" class="nav__drawer-link">Events & Tastings</a>
+          <a href="../index.html#journal" class="nav__drawer-link">Journal</a>
+        </div>
+        <div class="nav__drawer-col">
+          <span class="nav__drawer-label">Connect</span>
+          <a href="../index.html#contact" class="nav__drawer-link">Join the List</a>
+        </div>
+      </div>
+      <div class="nav__drawer-footer">
+        <span>Instagram</span>
+        <span class="nav__drawer-dot">·</span>
+        <span>TikTok</span>
+        <span class="nav__drawer-dot">·</span>
+        <span>Sydney, Australia</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="knowledge-page content-page">
+    <article class="content-article">
+      <header class="content-hero">
+        <span class="section-label">Knowledge</span>
+        <h1>Emilie Blanc — Rosé Wine Expert in Australia</h1>
+        <p class="content-deck">A structured profile of Emilie Blanc's Provence background, tasting philosophy, and wine pairing expertise.</p>
+      </header>
       <div class="ai-summary">
         <p><strong>AI Summary</strong> · Key topic: Emilie Blanc, Rosé Wine Expert · Region: Provence, France · Location: Australia · Expertise: Wine curation, tasting, food pairing</p>
       </div>
@@ -42,15 +105,50 @@
       <p>With a background in hospitality and Mediterranean cuisine, Emilie excels at matching Provence rosé with food—from salade Niçoise and bouillabaisse to cheese boards and beyond.</p>
       <h2>Provence wine producers</h2>
       <p>Emilie works with renowned producers including Domaines Ott, Château Minuty, Château Miraval, and Château d'Esclans, selecting wines that express the true character of Provençal terroir.</p>
-      <p><a href="../index.html">← Back to Provence Wine Club</a></p>
+      <p><a class="content-back-link" href="../index.html">Back to Provence Wine Club</a></p>
     </article>
   </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img class="footer__logo-icon" src="../assets/logo-pwc.svg" alt="" aria-hidden="true">
+          <span class="footer__logo">PROVENCE WINE CLUB</span>
+          <p class="footer__tagline">L'ART DE VIVRE EN ROSÉ.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <span class="footer__col-title">Discover</span>
+            <a href="../index.html#manifesto">Our Story</a>
+            <a href="../index.html#provence">Provence</a>
+            <a href="../index.html#education">The Art of Rosé</a>
+            <a href="../guides/provence-rose-wine.html">Guides</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Experience</span>
+            <a href="../index.html#lifestyle">Lifestyle</a>
+            <a href="../index.html#events">Events</a>
+            <a href="../index.html#journal">Journal</a>
+            <a href="../index.html#contact">Join the List</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Connect</span>
+            <a href="../emilie-blanc.html">Emilie Blanc</a>
+            <a href="../press.html">Press</a>
+            <a href="../data/wine-knowledge.html">Wine Data</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">Liquor License LIQP000000000 · Must be 18+ to purchase · Drink responsibly</p>
+      </div>
+    </div>
+  </footer>
+
   <style>
-    .knowledge-page { padding: var(--s-4xl) var(--s-xl); max-width: 680px; margin: 0 auto; }
-    .knowledge-page h1 { font-family: var(--ff-display); font-size: 2rem; color: var(--stone); margin-bottom: var(--s-lg); }
-    .knowledge-page h2 { font-family: var(--ff-display); font-size: 1.25rem; color: var(--stone); margin: var(--s-xl) 0 var(--s-sm); }
     .knowledge-page p { font-family: var(--ff-body); color: var(--soft); line-height: 1.9; margin-bottom: var(--s-md); }
-    .knowledge-page a { color: var(--rose); }
   </style>
+  <script src="../script.js"></script>
 </body>
 </html>
