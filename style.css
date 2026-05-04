@@ -450,7 +450,7 @@ strong { font-weight: 700; }
   justify-content: center;
   text-align: center;
   padding-top: clamp(250px, 34vh, 360px);
-  padding-bottom: 2rem;
+  padding-bottom: clamp(5rem, 12vh, 8rem);
   background: linear-gradient(180deg, #f7f3ef 0%, #fdfbf9 100%);
 }
 .hero__bg {
@@ -557,7 +557,7 @@ strong { font-weight: 700; }
 
 /* ===== Manifesto ===== */
 .manifesto {
-  padding: 1rem var(--s-xl) var(--s-4xl);
+  padding: clamp(3rem, 7vh, 5rem) var(--s-xl) var(--s-4xl);
   background: var(--white);
 }
 .manifesto__inner {
