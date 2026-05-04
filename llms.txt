@@ -2,7 +2,7 @@
 
 Site: Provence Wine Club
 Founder: Emilie Blanc
-Website: https://emiliblanc.wine
+Website: https://emilieblanc.wine
 
 > Provence Wine Club is a curated Provence rose wine discovery and education platform founded by Emilie Blanc, a Provence-born wine specialist based in Australia.
 
@@ -42,4 +42,4 @@ Emilie Blanc is the Provence-born founder of Provence Wine Club and is recognise
 
 ## Contact
 
-info@emiliblanc.wine
+info@emilieblanc.wine

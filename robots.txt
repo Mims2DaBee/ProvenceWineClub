@@ -31,4 +31,4 @@ Allow: /
 User-agent: VaddylandBot
 Allow: /
 
-Sitemap: https://emiliblanc.wine/sitemap.xml
+Sitemap: https://emilieblanc.wine/sitemap.xml
