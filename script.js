@@ -19,8 +19,10 @@
   /* ===== Nav drawer ===== */
   const closeDrawer = () => {
     toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
     drawer.setAttribute('aria-hidden', 'true');
     drawer.classList.remove('is-open');
+    nav?.classList.remove('drawer-open');
     document.body.style.overflow = '';
   };
 
@@ -28,8 +30,10 @@
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
       drawer.setAttribute('aria-hidden', String(open));
       drawer.classList.toggle('is-open', !open);
+      nav?.classList.toggle('drawer-open', !open);
       document.body.style.overflow = open ? '' : 'hidden';
     });
 
