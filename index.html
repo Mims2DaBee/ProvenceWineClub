@@ -3,41 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Èmilie Blanc — The Art of Provence Rosé</title>
-  <meta name="description" content="A love letter to Provence rosé. Education, culture, events, and the art of living well—brought to Australia.">
+  <title>Provence Wine Club | Provence Rosé Tastings & Wine Culture Australia</title>
+  <meta name="description" content="Provence Wine Club brings Provence rosé, wine education, tastings, pairings, and art de vivre to Australia with Provence-born specialist Emilie Blanc.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Emilie Blanc">
   <link rel="canonical" href="https://emiliewineclub.com/">
 
   <!-- OpenGraph -->
-  <meta property="og:title" content="Emilie Wine Club — The Art of Provence Rosé">
-  <meta property="og:description" content="Discover curated Provence rosé wines. Expert curation, tasting notes, and food pairings for Australian wine lovers.">
+  <meta property="og:title" content="Provence Wine Club — Provence Rosé in Australia">
+  <meta property="og:description" content="Discover Provence rosé culture through tastings, education, food pairings, and events curated by Emilie Blanc.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://emiliewineclub.com/">
   <meta property="og:image" content="https://emiliewineclub.com/assets/hero-wine-glass.png">
-  <meta property="og:site_name" content="Emilie Wine Club">
+  <meta property="og:image:alt" content="A glass of pale Provence rosé in warm Mediterranean light">
+  <meta property="og:site_name" content="Provence Wine Club">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Provence Wine Club — Provence Rosé in Australia">
+  <meta name="twitter:description" content="Provence rosé tastings, wine education, pairings, and art de vivre in Australia.">
+  <meta name="twitter:image" content="https://emiliewineclub.com/assets/hero-wine-glass.png">
 
-  <!-- JSON-LD: Person -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Emilie Blanc",
-    "jobTitle": "Rosé Wine Specialist",
-    "description": "Founder of Emilie Wine Club and expert in Provence rosé wines.",
-    "knowsAbout": ["Provence rosé wine", "wine tasting", "wine pairing", "French wine regions"],
-    "worksFor": { "@type": "Organization", "name": "Emilie Wine Club" },
-    "areaServed": "Australia"
-  }
-  </script>
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Emilie Wine Club",
-    "url": "https://emiliewineclub.com",
-    "founder": "Emilie Blanc",
-    "description": "Curated Provence rosé wine club for Australian wine lovers.",
-    "sameAs": ["https://instagram.com/emiliewineclub"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://emiliewineclub.com/#website",
+        "name": "Provence Wine Club",
+        "url": "https://emiliewineclub.com/",
+        "description": "Provence rosé wine culture, tastings, events, and education in Australia.",
+        "inLanguage": "en-AU",
+        "publisher": { "@id": "https://emiliewineclub.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://emiliewineclub.com/#organization",
+        "name": "Provence Wine Club",
+        "url": "https://emiliewineclub.com/",
+        "logo": "https://emiliewineclub.com/assets/logo-pwc.svg",
+        "founder": { "@id": "https://emiliewineclub.com/#emilie-blanc" },
+        "areaServed": "Australia",
+        "description": "A Provence rosé wine club for Australian wine lovers.",
+        "sameAs": ["https://instagram.com/emiliewineclub"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://emiliewineclub.com/#emilie-blanc",
+        "name": "Emilie Blanc",
+        "url": "https://emiliewineclub.com/emilie-blanc.html",
+        "image": "https://emiliewineclub.com/assets/emilie-blanc-portrait.png",
+        "jobTitle": "Provence Rosé Wine Specialist",
+        "description": "Provence-born founder of Provence Wine Club and specialist in Provence rosé wines.",
+        "knowsAbout": ["Provence rosé wine", "wine tasting", "wine pairing", "French wine regions", "Mediterranean food pairings"],
+        "worksFor": { "@id": "https://emiliewineclub.com/#organization" },
+        "areaServed": "Australia"
+      }
+    ]
   }
   </script>
   <!-- JSON-LD: FAQPage -->
