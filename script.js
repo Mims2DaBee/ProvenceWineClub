@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3BLTF4UJHaTHbZufn7EI9ua3YDQ1JJZg1MCmqn_nDAEq58w9knJuPwQUiBu54ogU9/exec';
 
   /* ===== DOM ===== */
   const nav = document.querySelector('.nav');
