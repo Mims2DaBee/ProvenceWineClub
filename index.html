@@ -80,7 +80,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -536,12 +535,13 @@
         <form class="contact__form" id="signup-form" data-form-type="newsletter_signup" data-reveal>
           <input class="contact__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="rendered_at" value="">
+          <input type="hidden" name="turnstile_token" value="">
           <div class="contact__form-row">
             <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
             <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
             <button type="submit" class="btn btn--primary">Subscribe</button>
           </div>
-          <div class="contact__turnstile cf-turnstile" data-sitekey="0x4AAAAAADMnK9ZRozokdcfM" data-theme="dark" data-size="flexible"></div>
+          <div class="contact__turnstile" data-turnstile-widget></div>
           <p class="contact__note">No spam. Unsubscribe anytime. We respect your inbox as much as we respect a good rosé.</p>
         </form>
 
@@ -552,6 +552,7 @@
         <form class="contact__form contact__form--event" id="event-form" data-form-type="event_enquiry" data-reveal>
           <input class="contact__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="rendered_at" value="">
+          <input type="hidden" name="turnstile_token" value="">
           <div class="contact__form-row">
             <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
             <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
@@ -567,7 +568,7 @@
             </select>
             <button type="submit" class="btn btn--ghost btn--light">Send Enquiry</button>
           </div>
-          <div class="contact__turnstile cf-turnstile" data-sitekey="0x4AAAAAADMnK9ZRozokdcfM" data-theme="dark" data-size="flexible"></div>
+          <div class="contact__turnstile" data-turnstile-widget></div>
         </form>
       </div>
     </section>

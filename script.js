@@ -1,12 +1,14 @@
 (function () {
   'use strict';
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3BLTF4UJHaTHbZufn7EI9ua3YDQ1JJZg1MCmqn_nDAEq58w9knJuPwQUiBu54ogU9/exec';
+  const TURNSTILE_SITE_KEY = '0x4AAAAAADMnK9ZRozokdcfM';
 
   /* ===== DOM ===== */
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav__toggle');
   const drawer = document.getElementById('nav-drawer');
   const contactForms = document.querySelectorAll('.contact__form[data-form-type]');
+  const turnstileWidgets = document.querySelectorAll('[data-turnstile-widget]');
 
   /* ===== Nav scroll ===== */
   const onScroll = () => {
@@ -50,6 +52,45 @@
     if (renderedAt) renderedAt.value = String(Date.now());
   });
 
+  const renderTurnstileWidgets = () => {
+    if (!window.turnstile) return;
+
+    turnstileWidgets.forEach((widget) => {
+      if (widget.dataset.widgetId) return;
+
+      const form = widget.closest('form');
+      const tokenInput = form?.querySelector('input[name="turnstile_token"]');
+      if (!form || !tokenInput) return;
+
+      const widgetId = window.turnstile.render(widget, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: 'dark',
+        size: 'flexible',
+        callback: (token) => {
+          tokenInput.value = token || '';
+        },
+        'expired-callback': () => {
+          tokenInput.value = '';
+        },
+        'error-callback': () => {
+          tokenInput.value = '';
+        }
+      });
+
+      widget.dataset.widgetId = String(widgetId);
+    });
+  };
+
+  window.onTurnstileLoad = renderTurnstileWidgets;
+
+  if (turnstileWidgets.length) {
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   const submitToGoogleSheets = async (payload) => {
     if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
       throw new Error('Google Apps Script URL missing.');
@@ -64,6 +105,7 @@
   };
 
   const getTurnstileToken = (form) => (
+    form.querySelector('input[name="turnstile_token"]')?.value ||
     form.querySelector('textarea[name="cf-turnstile-response"]')?.value ||
     form.querySelector('input[name="cf-turnstile-response"]')?.value ||
     ''
@@ -71,7 +113,10 @@
 
   const resetTurnstile = (form) => {
     if (!window.turnstile) return;
-    if (form.querySelector('.cf-turnstile')) window.turnstile.reset();
+    const widget = form.querySelector('[data-turnstile-widget]');
+    const tokenInput = form.querySelector('input[name="turnstile_token"]');
+    if (tokenInput) tokenInput.value = '';
+    if (widget?.dataset.widgetId) window.turnstile.reset(widget.dataset.widgetId);
   };
 
   const buildFormPayload = (form) => {
