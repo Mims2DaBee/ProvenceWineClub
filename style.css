@@ -1413,6 +1413,14 @@ strong { font-weight: 700; }
   line-height: 1.8;
 }
 .contact__form { margin-bottom: var(--s-md); }
+.contact__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .contact__form-row {
   display: flex;
   gap: 0;
@@ -1442,6 +1450,12 @@ strong { font-weight: 700; }
 .contact__form select option {
   color: var(--stone);
   background: var(--ivory);
+}
+.contact__turnstile {
+  display: flex;
+  justify-content: center;
+  margin: var(--s-md) auto var(--s-sm);
+  min-height: 65px;
 }
 .contact__note {
   font-family: var(--ff-sans);

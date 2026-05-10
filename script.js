@@ -6,8 +6,7 @@
   const nav = document.querySelector('.nav');
   const toggle = document.querySelector('.nav__toggle');
   const drawer = document.getElementById('nav-drawer');
-  const signupForm = document.getElementById('signup-form');
-  const eventForm = document.getElementById('event-form');
+  const contactForms = document.querySelectorAll('.contact__form[data-form-type]');
 
   /* ===== Nav scroll ===== */
   const onScroll = () => {
@@ -46,6 +45,11 @@
   }
 
   /* ===== Forms ===== */
+  contactForms.forEach((form) => {
+    const renderedAt = form.querySelector('input[name="rendered_at"]');
+    if (renderedAt) renderedAt.value = String(Date.now());
+  });
+
   const submitToGoogleSheets = async (payload) => {
     if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE')) {
       throw new Error('Google Apps Script URL missing.');
@@ -61,70 +65,89 @@
     if (!res.ok) {
       throw new Error('Submission failed.');
     }
+
+    const responseText = await res.text();
+    let result = { ok: true };
+    try {
+      result = responseText ? JSON.parse(responseText) : result;
+    } catch (err) {
+      throw new Error('Unexpected server response.');
+    }
+    if (result && result.ok === false) {
+      throw new Error(result.error || 'Submission rejected.');
+    }
   };
 
-  signupForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = signupForm.querySelector('button[type="submit"]');
-    const firstName = signupForm.querySelector('input[name="first_name"]')?.value?.trim() || '';
-    const email = signupForm.querySelector('input[name="email"]')?.value?.trim() || '';
+  const getTurnstileToken = (form) => (
+    form.querySelector('textarea[name="cf-turnstile-response"]')?.value ||
+    form.querySelector('input[name="cf-turnstile-response"]')?.value ||
+    ''
+  );
 
-    if (!email) return;
+  const resetTurnstile = (form) => {
+    if (!window.turnstile) return;
+    if (form.querySelector('.cf-turnstile')) window.turnstile.reset();
+  };
 
-    submitBtn?.setAttribute('disabled', 'true');
-    const originalText = submitBtn?.textContent;
-    if (submitBtn) submitBtn.textContent = 'Submitting...';
+  const buildFormPayload = (form) => {
+    const formData = new FormData(form);
+    const formType = form.dataset.formType || formData.get('form_type') || '';
+    const payload = {
+      form_type: formType,
+      first_name: String(formData.get('first_name') || '').trim(),
+      name: String(formData.get('name') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      event_type: String(formData.get('event_type') || '').trim(),
+      website: String(formData.get('website') || '').trim(),
+      rendered_at: String(formData.get('rendered_at') || ''),
+      turnstile_token: getTurnstileToken(form),
+      page: window.location.href,
+      user_agent: navigator.userAgent,
+      submitted_at: new Date().toISOString()
+    };
 
-    try {
-      await submitToGoogleSheets({
-        form_type: 'newsletter_signup',
-        first_name: firstName,
-        email,
-        page: window.location.href,
-        submitted_at: new Date().toISOString()
-      });
-      alert("Thank you. You're on the list.");
-      signupForm.reset();
-    } catch (err) {
-      alert('Sorry, signup is not connected yet. Please add the Google Apps Script URL in script.js.');
-      console.error(err);
-    } finally {
-      submitBtn?.removeAttribute('disabled');
-      if (submitBtn && originalText) submitBtn.textContent = originalText;
+    if (formType === 'newsletter_signup' && !payload.email) {
+      throw new Error('Please enter your email address.');
     }
-  });
 
-  eventForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = eventForm.querySelector('button[type="submit"]');
-    const name = eventForm.querySelector('input[name="name"]')?.value?.trim() || '';
-    const email = eventForm.querySelector('input[name="email"]')?.value?.trim() || '';
-    const eventType = eventForm.querySelector('select[name="event_type"]')?.value?.trim() || '';
-
-    if (!email || !eventType) return;
-
-    submitBtn?.setAttribute('disabled', 'true');
-    const originalText = submitBtn?.textContent;
-    if (submitBtn) submitBtn.textContent = 'Sending...';
-
-    try {
-      await submitToGoogleSheets({
-        form_type: 'event_enquiry',
-        name,
-        email,
-        event_type: eventType,
-        page: window.location.href,
-        submitted_at: new Date().toISOString()
-      });
-      alert("Thank you. We'll be in touch about your event enquiry.");
-      eventForm.reset();
-    } catch (err) {
-      alert('Sorry, event form is not connected yet. Please add the Google Apps Script URL in script.js.');
-      console.error(err);
-    } finally {
-      submitBtn?.removeAttribute('disabled');
-      if (submitBtn && originalText) submitBtn.textContent = originalText;
+    if (formType === 'event_enquiry' && (!payload.name || !payload.email || !payload.event_type)) {
+      throw new Error('Please complete your name, email, and enquiry type.');
     }
+
+    if (!payload.turnstile_token) {
+      throw new Error('Please complete the anti-spam check.');
+    }
+
+    return payload;
+  };
+
+  contactForms.forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn?.textContent;
+      const successMessage = form.dataset.formType === 'newsletter_signup'
+        ? "Thank you. You're on the list."
+        : "Thank you. We'll be in touch about your enquiry.";
+
+      submitBtn?.setAttribute('disabled', 'true');
+      if (submitBtn) submitBtn.textContent = form.dataset.formType === 'newsletter_signup' ? 'Submitting...' : 'Sending...';
+
+      try {
+        await submitToGoogleSheets(buildFormPayload(form));
+        alert(successMessage);
+        form.reset();
+        const renderedAt = form.querySelector('input[name="rendered_at"]');
+        if (renderedAt) renderedAt.value = String(Date.now());
+        resetTurnstile(form);
+      } catch (err) {
+        alert(err?.message || 'Sorry, something went wrong. Please try again.');
+        console.error(err);
+      } finally {
+        submitBtn?.removeAttribute('disabled');
+        if (submitBtn && originalText) submitBtn.textContent = originalText;
+      }
+    });
   });
 
   /* ===== Scroll reveal ===== */
