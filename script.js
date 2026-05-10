@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3BLTF4UJHaTHbZufn7EI9ua3YDQ1JJZg1MCmqn_nDAEq58w9knJuPwQUiBu54ogU9/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLJOqJp1nbaFZKIC4O44ilDkc9btLoFAztQqlIMayioIqIidpsPZzMcksHnMj6gB3/exec';
   const TURNSTILE_SITE_KEY = '0x4AAAAAADMnK9ZRozokdcfM';
 
   /* ===== DOM ===== */
