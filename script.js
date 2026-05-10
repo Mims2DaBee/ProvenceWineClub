@@ -56,26 +56,11 @@
     }
 
     const body = new URLSearchParams(payload);
-    const res = await fetch(GOOGLE_SCRIPT_URL, {
+    await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      mode: 'no-cors',
       body
     });
-
-    if (!res.ok) {
-      throw new Error('Submission failed.');
-    }
-
-    const responseText = await res.text();
-    let result = { ok: true };
-    try {
-      result = responseText ? JSON.parse(responseText) : result;
-    } catch (err) {
-      throw new Error('Unexpected server response.');
-    }
-    if (result && result.ok === false) {
-      throw new Error(result.error || 'Submission rejected.');
-    }
   };
 
   const getTurnstileToken = (form) => (
