@@ -6,6 +6,7 @@ This site submits newsletter signups and event enquiries to a Google Apps Script
 
 - In Google Drive, create a new Google Sheet.
 - Name the first tab `Leads`.
+- Sheet URL for this site: `https://docs.google.com/spreadsheets/d/12msU0fCcR2hh-IGYHg0Sq0hpUhhAmLInXYCemurapr8/edit`
 - Add these headers in row 1:
   - `submitted_at`
   - `form_type`
@@ -22,9 +23,7 @@ This site submits newsletter signups and event enquiries to a Google Apps Script
 
 - Go to Cloudflare Turnstile and create a widget for `emilieblanc.wine`.
 - Copy the **site key**.
-- In `index.html` and `emilie-blanc.html`, replace:
-  - `PASTE_YOUR_CLOUDFLARE_TURNSTILE_SITE_KEY_HERE`
-  - with your Turnstile site key.
+- The public Turnstile site key is already added to `index.html` and `emilie-blanc.html`.
 - Copy the **secret key**. You will store it in Apps Script properties, not in this repo.
 
 ## 3) Create the Telegram Bot
