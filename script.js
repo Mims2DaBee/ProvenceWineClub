@@ -97,11 +97,15 @@
     }
 
     const body = new URLSearchParams(payload);
-    await fetch(GOOGLE_SCRIPT_URL, {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
-      mode: 'no-cors',
       body
     });
+
+    const result = await response.json();
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || 'Sorry, something went wrong. Please try again.');
+    }
   };
 
   const getTurnstileToken = (form) => (
