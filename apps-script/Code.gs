@@ -2,6 +2,12 @@ var SPREADSHEET_ID = '12msU0fCcR2hh-IGYHg0Sq0hpUhhAmLInXYCemurapr8';
 var SHEET_NAME = 'Leads';
 var MIN_SUBMIT_MS = 2500;
 var MAX_SUBMIT_MS = 1000 * 60 * 60 * 3;
+var ALLOWED_HOSTNAMES = [
+  'emilieblanc.wine',
+  'www.emilieblanc.wine',
+  'provencewineclub.com.au',
+  'www.provencewineclub.com.au'
+];
 
 function doGet() {
   return json_({ ok: true, service: 'Provence Wine Club leads' });
@@ -40,8 +46,11 @@ function validateSubmission_(p) {
     throw new Error('Unknown form type.');
   }
 
-  verifyTurnstile_(p.turnstile_token);
-  return 'passed';
+  var turnstileResult = verifyTurnstile_(p.turnstile_token);
+  var verifiedHostname = normalizeHostname_(turnstileResult.hostname || '');
+  validateHostname_(p.hostname, verifiedHostname);
+
+  return verifiedHostname ? 'passed:' + verifiedHostname : 'passed';
 }
 
 function verifyTurnstile_(token) {
@@ -60,7 +69,33 @@ function verifyTurnstile_(token) {
   });
 
   var result = JSON.parse(response.getContentText() || '{}');
-  if (!result.success) throw new Error('Anti-spam check failed.');
+  if (!result.success) {
+    var codes = result['error-codes'] || [];
+    throw new Error('Anti-spam check failed' + (codes.length ? ': ' + codes.join(', ') : '.'));
+  }
+
+  return result;
+}
+
+function validateHostname_(submittedHostname, verifiedHostname) {
+  var submitted = normalizeHostname_(submittedHostname || '');
+  var verified = normalizeHostname_(verifiedHostname || submitted);
+  var hostname = verified || submitted;
+
+  if (!hostname) return;
+  if (ALLOWED_HOSTNAMES.indexOf(hostname) !== -1) return;
+
+  throw new Error('Anti-spam check is not configured for this domain: ' + hostname);
+}
+
+function normalizeHostname_(hostname) {
+  return String(hostname || '')
+    .toLowerCase()
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\.(?=www\.)/, '')
+    .split('/')[0]
+    .split(':')[0]
+    .trim();
 }
 
 function appendLead_(p, spamStatus) {
@@ -74,7 +109,7 @@ function appendLead_(p, spamStatus) {
     p.event_type || '',
     p.page || '',
     p.user_agent || '',
-    '',
+    p.hostname || '',
     spamStatus || ''
   ]);
 }

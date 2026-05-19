@@ -136,6 +136,7 @@
       rendered_at: String(formData.get('rendered_at') || ''),
       turnstile_token: getTurnstileToken(form),
       page: window.location.href,
+      hostname: window.location.hostname,
       user_agent: navigator.userAgent,
       submitted_at: new Date().toISOString()
     };
