@@ -1,6 +1,6 @@
 # Provence Wine Club
 
-Provence Wine Club is a static editorial website for Emilie Blanc's Provence rose wine project in Australia. The site introduces the club, tells the Provence story, and supports search discovery with guide, pairing, press, and knowledge pages.
+Provence Wine Club is a static editorial website for Emilie Blanc's Provence rosé wine project in Sydney, Australia. The site introduces the club, tells the Provence story, and supports search discovery for rosé tastings, wine education, private events, community, and lifestyle across Sydney and the Northern Beaches.
 
 ## Live Site
 
@@ -20,11 +20,13 @@ Provence Wine Club is a static editorial website for Emilie Blanc's Provence ros
 
 The site is optimized around:
 
-- Provence rose wine in Australia
+- Provence rosé wine in Australia
+- Rosé wine tastings in Sydney
+- Sydney Northern Beaches wine education and private events
 - Provence Wine Club
 - Emilie Blanc wine expert
-- Provence rose tastings and events
-- Mediterranean food pairings with rose
+- Provence rosé tastings and events
+- Mediterranean food pairings with rosé
 
 ## Project Structure
 
@@ -53,4 +55,3 @@ Deploy by pushing `main` to GitHub:
 ```bash
 git push origin main
 ```
-

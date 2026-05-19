@@ -1,0 +1,18 @@
+{
+  "name": "Provence Wine Club",
+  "short_name": "PWC",
+  "description": "Provence rosé wine tastings, wine education, private events, and community gatherings in Sydney and the Northern Beaches.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#f7f2ec",
+  "theme_color": "#f7f2ec",
+  "icons": [
+    {
+      "src": "/assets/logo-pwc.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
