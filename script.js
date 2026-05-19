@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVLJOqJp1nbaFZKIC4O44ilDkc9btLoFAztQqlIMayioIqIidpsPZzMcksHnMj6gB3/exec';
-  const TURNSTILE_SITE_KEY = '0x4AAAAAADSY7YxrEOWqdX6j';
+  const TURNSTILE_SITE_KEY = '0x4AAAAAADSY7YxmEOWqdX6j';
 
   /* ===== DOM ===== */
   const nav = document.querySelector('.nav');
