@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Provence Wine Club favicon">
+  <rect width="64" height="64" rx="16" fill="#FAF7F4"/>
+  <circle cx="32" cy="32" r="29" fill="#F5EDE8" stroke="#1A1816" stroke-width="2"/>
+  <circle cx="27" cy="24" r="7" fill="#F4CDBC"/>
+  <path d="M12 39 L22 33 L29 36 L37 26 L44 34 L52 38" fill="none" stroke="#555555" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 42 H50" fill="none" stroke="#9A6B62" stroke-width="2" stroke-linecap="round" opacity="0.72"/>
+  <text x="32" y="54" text-anchor="middle" fill="#1A1816" font-family="Georgia, serif" font-size="8" font-weight="700" letter-spacing="1.4">PWC</text>
+</svg>
