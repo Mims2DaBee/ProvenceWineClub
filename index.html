@@ -612,6 +612,36 @@
 
   </main>
 
+  <div class="newsletter-modal" data-newsletter-modal aria-hidden="true">
+    <div class="newsletter-modal__backdrop" data-newsletter-close></div>
+    <section class="newsletter-modal__panel" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-title">
+      <button class="newsletter-modal__close" type="button" aria-label="Close" data-newsletter-close>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="newsletter-modal__media">
+        <img src="assets/hero-wine-glass.png" alt="A glass of Provence rosé in warm light">
+      </div>
+      <div class="newsletter-modal__content">
+        <span class="newsletter-modal__eyebrow">Provence Wine Club</span>
+        <h2 class="newsletter-modal__title" id="newsletter-modal-title">Stay close to Provence</h2>
+        <p class="newsletter-modal__copy">Join the list for Sydney tasting invitations, rosé notes, and the small rituals that make life feel more sunlit.</p>
+        <form class="newsletter-modal__form contact__form" data-form-type="newsletter_signup">
+          <input class="contact__trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="rendered_at" value="">
+          <input type="hidden" name="turnstile_token" value="">
+          <div class="newsletter-modal__fields">
+            <input type="text" name="first_name" placeholder="First name" aria-label="First name" required>
+            <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+          </div>
+          <div class="newsletter-modal__turnstile contact__turnstile" data-turnstile-widget></div>
+          <button type="submit" class="btn btn--primary newsletter-modal__submit">Stay in touch</button>
+          <p class="newsletter-modal__note">No spam. Just thoughtful notes from Provence Wine Club.</p>
+        </form>
+      </div>
+    </section>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__inner">

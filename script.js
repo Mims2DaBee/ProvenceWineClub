@@ -9,6 +9,8 @@
   const drawer = document.getElementById('nav-drawer');
   const contactForms = document.querySelectorAll('.contact__form[data-form-type]');
   const turnstileWidgets = document.querySelectorAll('[data-turnstile-widget]');
+  const newsletterModal = document.querySelector('[data-newsletter-modal]');
+  const newsletterModalDismissedKey = 'pwc-newsletter-modal-dismissed';
 
   /* ===== Nav scroll ===== */
   const onScroll = () => {
@@ -47,10 +49,12 @@
   }
 
   /* ===== Forms ===== */
-  contactForms.forEach((form) => {
+  const setRenderedAt = (form) => {
     const renderedAt = form.querySelector('input[name="rendered_at"]');
     if (renderedAt) renderedAt.value = String(Date.now());
-  });
+  };
+
+  contactForms.forEach(setRenderedAt);
 
   const renderTurnstileWidgets = () => {
     if (!window.turnstile) return;
@@ -123,6 +127,55 @@
     if (widget?.dataset.widgetId) window.turnstile.reset(widget.dataset.widgetId);
   };
 
+  const closeNewsletterModal = (remember = true) => {
+    if (!newsletterModal) return;
+    newsletterModal.classList.remove('is-open');
+    newsletterModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('newsletter-modal-open');
+    if (remember) {
+      try {
+        window.localStorage.setItem(newsletterModalDismissedKey, 'true');
+      } catch (err) {
+        // Ignore private browsing storage errors.
+      }
+    }
+  };
+
+  const openNewsletterModal = () => {
+    if (!newsletterModal) return;
+    const form = newsletterModal.querySelector('form');
+    if (form) setRenderedAt(form);
+    newsletterModal.classList.add('is-open');
+    newsletterModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('newsletter-modal-open');
+    window.setTimeout(() => {
+      newsletterModal.querySelector('input[name="first_name"]')?.focus();
+    }, 250);
+  };
+
+  if (newsletterModal) {
+    let hasDismissed = false;
+    try {
+      hasDismissed = window.localStorage.getItem(newsletterModalDismissedKey) === 'true';
+    } catch (err) {
+      hasDismissed = false;
+    }
+
+    newsletterModal.querySelectorAll('[data-newsletter-close]').forEach((control) => {
+      control.addEventListener('click', () => closeNewsletterModal(true));
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && newsletterModal.classList.contains('is-open')) {
+        closeNewsletterModal(true);
+      }
+    });
+
+    if (!hasDismissed) {
+      window.setTimeout(openNewsletterModal, 850);
+    }
+  }
+
   const buildFormPayload = (form) => {
     const formData = new FormData(form);
     const formType = form.dataset.formType || formData.get('form_type') || '';
@@ -172,9 +225,9 @@
         await submitToGoogleSheets(buildFormPayload(form));
         alert(successMessage);
         form.reset();
-        const renderedAt = form.querySelector('input[name="rendered_at"]');
-        if (renderedAt) renderedAt.value = String(Date.now());
+        setRenderedAt(form);
         resetTurnstile(form);
+        if (form.closest('[data-newsletter-modal]')) closeNewsletterModal(true);
       } catch (err) {
         alert(err?.message || 'Sorry, something went wrong. Please try again.');
         console.error(err);
