@@ -56,32 +56,41 @@
 
   contactForms.forEach(setRenderedAt);
 
+  const isWidgetVisible = (widget) => (
+    !widget.closest('[aria-hidden="true"]') && widget.offsetParent !== null
+  );
+
+  const renderTurnstileWidget = (widget) => {
+    if (!window.turnstile) return;
+    if (!widget || widget.dataset.widgetId) return;
+
+    const form = widget.closest('form');
+    const tokenInput = form?.querySelector('input[name="turnstile_token"]');
+    if (!form || !tokenInput) return;
+
+    const widgetId = window.turnstile.render(widget, {
+      sitekey: TURNSTILE_SITE_KEY,
+      theme: 'dark',
+      size: 'flexible',
+      callback: (token) => {
+        tokenInput.value = token || '';
+      },
+      'expired-callback': () => {
+        tokenInput.value = '';
+      },
+      'error-callback': () => {
+        tokenInput.value = '';
+      }
+    });
+
+    widget.dataset.widgetId = String(widgetId);
+  };
+
   const renderTurnstileWidgets = () => {
     if (!window.turnstile) return;
 
     turnstileWidgets.forEach((widget) => {
-      if (widget.dataset.widgetId) return;
-
-      const form = widget.closest('form');
-      const tokenInput = form?.querySelector('input[name="turnstile_token"]');
-      if (!form || !tokenInput) return;
-
-      const widgetId = window.turnstile.render(widget, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: 'dark',
-        size: 'flexible',
-        callback: (token) => {
-          tokenInput.value = token || '';
-        },
-        'expired-callback': () => {
-          tokenInput.value = '';
-        },
-        'error-callback': () => {
-          tokenInput.value = '';
-        }
-      });
-
-      widget.dataset.widgetId = String(widgetId);
+      if (isWidgetVisible(widget)) renderTurnstileWidget(widget);
     });
   };
 
@@ -124,7 +133,12 @@
     const widget = form.querySelector('[data-turnstile-widget]');
     const tokenInput = form.querySelector('input[name="turnstile_token"]');
     if (tokenInput) tokenInput.value = '';
-    if (widget?.dataset.widgetId) window.turnstile.reset(widget.dataset.widgetId);
+    if (!widget) return;
+    if (!widget.dataset.widgetId) {
+      renderTurnstileWidget(widget);
+      return;
+    }
+    window.turnstile.reset(widget.dataset.widgetId);
   };
 
   const closeNewsletterModal = (remember = true) => {
@@ -148,6 +162,7 @@
     newsletterModal.classList.add('is-open');
     newsletterModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('newsletter-modal-open');
+    if (form) resetTurnstile(form);
     window.setTimeout(() => {
       newsletterModal.querySelector('input[name="first_name"]')?.focus();
     }, 250);

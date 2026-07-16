@@ -71,6 +71,9 @@ function verifyTurnstile_(token) {
   var result = JSON.parse(response.getContentText() || '{}');
   if (!result.success) {
     var codes = result['error-codes'] || [];
+    if (codes.indexOf('timeout-or-duplicate') !== -1) {
+      throw new Error('The anti-spam check expired. Please try again.');
+    }
     throw new Error('Anti-spam check failed' + (codes.length ? ': ' + codes.join(', ') : '.'));
   }
 
