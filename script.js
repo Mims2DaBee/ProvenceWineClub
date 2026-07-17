@@ -224,10 +224,23 @@
     return payload;
   };
 
+  const getFormStatus = (form) => {
+    let status = form.querySelector('.contact__status');
+    if (status) return status;
+    status = document.createElement('p');
+    status.className = 'contact__status';
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    status.setAttribute('tabindex', '-1');
+    form.appendChild(status);
+    return status;
+  };
+
   contactForms.forEach((form) => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = form.querySelector('button[type="submit"]');
+      const status = getFormStatus(form);
       const originalText = submitBtn?.textContent;
       const successMessage = form.dataset.formType === 'newsletter_signup'
         ? "Thank you. You're on the list."
@@ -235,16 +248,21 @@
 
       submitBtn?.setAttribute('disabled', 'true');
       if (submitBtn) submitBtn.textContent = form.dataset.formType === 'newsletter_signup' ? 'Submitting...' : 'Sending...';
+      status.dataset.state = 'pending';
+      status.textContent = form.dataset.formType === 'newsletter_signup' ? 'Adding you to the list…' : 'Sending your enquiry…';
 
       try {
         await submitToGoogleSheets(buildFormPayload(form));
-        alert(successMessage);
+        status.dataset.state = 'success';
+        status.textContent = successMessage;
         form.reset();
         setRenderedAt(form);
         resetTurnstile(form);
-        if (form.closest('[data-newsletter-modal]')) closeNewsletterModal(true);
+        status.focus({ preventScroll: false });
       } catch (err) {
-        alert(err?.message || 'Sorry, something went wrong. Please try again.');
+        status.dataset.state = 'error';
+        status.textContent = err?.message || 'Sorry, something went wrong. Please try again.';
+        status.focus({ preventScroll: false });
         console.error(err);
       } finally {
         submitBtn?.removeAttribute('disabled');
