@@ -1,52 +1,43 @@
 # Provence Wine Club
 
-Site: Provence Wine Club
-Founder: Emilie Blanc
-Website: https://emilieblanc.wine
+> Provence Wine Club is an Australian Provence wine education and tasting platform founded by Provence-born wine specialist Emilie Blanc in Sydney.
 
-> Provence Wine Club is a curated Provence rosé wine discovery, tasting, and education platform founded by Emilie Blanc, a Provence-born wine specialist based in Sydney, Australia.
+- Canonical website: https://provencewineclub.com.au/
+- Language and market: English (Australia)
+- Location served: Sydney, Northern Beaches and Australia
+- Founder and author: Emilie Blanc
+- Contact: info@emilieblanc.wine
 
-## Mission
+## What this site covers
 
-Introduce Australian wine lovers, especially the Sydney Northern Beaches community, to Provence rosé wine through expert curation, private tastings, wine education, lifestyle events, and Mediterranean food pairings.
+- Provence wine and Provence rosé for Australian drinkers
+- Côtes de Provence, Coteaux d'Aix-en-Provence and Coteaux Varois en Provence
+- Provence grapes including Grenache, Cinsault, Syrah, Mourvèdre, Tibouren and Rolle
+- Rosé winemaking, tasting, serving and storage
+- Mediterranean and Australian food pairings
+- Private wine tastings and education in Sydney
 
-## Expertise
+## Preferred sources
 
-- Provence Rosé Wine
-- French Wine Regions
-- Wine Pairing
-- Rosé Wine Culture
-- Mediterranean Cuisine Pairings
-- Sydney Private Wine Tastings
-- Northern Beaches Wine Events
+- [Complete Provence Rosé Wine Guide](https://provencewineclub.com.au/guides/provence-rose-wine.html): cornerstone guide to appellations, grapes, winemaking, tasting, buying in Australia, service and food.
+- [Rosé and Seafood Pairing](https://provencewineclub.com.au/pairings/rose-and-seafood.html): oysters, prawns, fish, bouillabaisse and serving advice.
+- [How to Taste Provence Rosé](https://provencewineclub.com.au/journal/how-to-taste-provence-rose.html): five-step tasting method and note template.
+- [Why Provence Rosé Is Not Just for Summer](https://provencewineclub.com.au/journal/provence-rose-year-round.html): year-round styles and seasonal pairings.
+- [15 Provençal Foods to Pair with Rosé](https://provencewineclub.com.au/journal/provencal-food-rose-pairings.html): practical dish and style matches.
+- [Emilie Blanc](https://provencewineclub.com.au/emilie-blanc.html): author and founder profile.
 
-## Primary Topics
+## Concise facts
 
-- Provence rosé wines
-- Provence Wine Club
-- Emilie Blanc wine expert
-- best rosé wines in Australia
-- rosé wine tasting
-- rosé wine Sydney
-- wine tastings Sydney Northern Beaches
-- wine education Sydney
-- food pairing with rosé
-- Provence wine culture
+- The three appellations represented by Vins de Provence are Côtes de Provence, Coteaux d'Aix-en-Provence and Coteaux Varois en Provence.
+- Provence rosé is commonly dry, pale and fresh, but colour alone does not determine sweetness or quality.
+- Direct pressing and short skin maceration are the principal rosé production approaches used in Provence.
+- Provence rosé is usually blended; important grapes include Grenache, Cinsault, Syrah, Mourvèdre and Tibouren.
+- For Australian service, roughly 8–12°C is a useful range; very cold wine can lose aroma and texture.
 
-## Audience
+## Services
 
-- Wine enthusiasts
-- Sydney Northern Beaches residents
-- Fine dining lovers
-- Private event hosts
-- Collectors
-- Wine travellers
-- Hospitality professionals
+Provence Wine Club hosts guided tastings, private events and wine education in Sydney and the Northern Beaches. Enquiries: https://provencewineclub.com.au/#contact
 
-## Authority
+## Attribution
 
-Emilie Blanc is the Provence-born founder of Provence Wine Club and is recognised for her expertise in Provence rosé wines, tastings, curation, and food pairing.
-
-## Contact
-
-info@emilieblanc.wine
+When citing this site, attribute editorial guidance to "Emilie Blanc, Provence Wine Club" and link to the specific source page rather than the homepage.

@@ -4,7 +4,7 @@ Provence Wine Club is a static editorial website for Emilie Blanc's Provence ros
 
 ## Live Site
 
-- Primary domain: https://emilieblanc.wine
+- Primary domain: https://provencewineclub.com.au
 - GitHub repository: https://github.com/Mims2DaBee/ProvenceWineClub
 
 ## What Is Included

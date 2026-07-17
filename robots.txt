@@ -31,4 +31,4 @@ Allow: /
 User-agent: VaddylandBot
 Allow: /
 
-Sitemap: https://emilieblanc.wine/sitemap.xml
+Sitemap: https://provencewineclub.com.au/sitemap.xml
