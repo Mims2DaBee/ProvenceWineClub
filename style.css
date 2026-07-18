@@ -830,6 +830,17 @@ strong { font-weight: 700; }
   text-transform: uppercase;
   margin-top: var(--s-lg);
 }
+.education__guide-link {
+  max-width: 760px;
+  margin: var(--s-xl) auto 0;
+  padding: var(--s-md) var(--s-lg);
+  border-left: 2px solid var(--rose);
+  background: rgba(255,255,255,0.58);
+  font-family: var(--ff-body);
+  color: var(--soft);
+  line-height: 1.8;
+}
+.education__guide-link a { color: var(--stone); text-decoration-color: var(--rose); }
 
 /* ===== Provençal Food Guide ===== */
 .food-guide {
