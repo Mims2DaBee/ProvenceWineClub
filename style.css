@@ -830,6 +830,44 @@ strong { font-weight: 700; }
   text-transform: uppercase;
   margin-top: var(--s-lg);
 }
+.glossary-index {
+  position: sticky;
+  top: 88px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: var(--s-xl) 0;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(139,127,118,0.18);
+  backdrop-filter: blur(10px);
+}
+.glossary-index a {
+  display: grid;
+  min-height: 48px;
+  place-items: center;
+  border-right: 1px solid rgba(139,127,118,0.18);
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.glossary-index a:last-child { border-right: 0; }
+.glossary-list {
+  margin-bottom: var(--s-xl);
+}
+.glossary-list dt {
+  scroll-margin-top: 155px;
+  margin-top: var(--s-lg);
+  font-family: var(--ff-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.glossary-list dd {
+  margin: 0.45rem 0 0;
+  padding-bottom: var(--s-md);
+  border-bottom: 1px solid rgba(139,127,118,0.14);
+}
 .education__guide-link {
   max-width: 760px;
   margin: var(--s-xl) auto 0;
@@ -1133,6 +1171,11 @@ strong { font-weight: 700; }
   .content-back-link {
     font-size: 0.68rem;
     line-height: 1.4;
+  }
+  .glossary-index { top: 119px; }
+  .glossary-list dt {
+    scroll-margin-top: 185px;
+    font-size: 1.35rem;
   }
 }
 
