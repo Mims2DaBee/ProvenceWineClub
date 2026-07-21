@@ -906,6 +906,24 @@ strong { font-weight: 700; }
   font-family: var(--ff-sans);
   font-size: 0.72rem;
 }
+.grape-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-md);
+  margin: var(--s-lg) 0;
+}
+.grape-grid section {
+  border-top: 2px solid var(--rose);
+  padding: var(--s-md) var(--s-md) 0 0;
+}
+.grape-grid h3 {
+  margin: 0 0 var(--s-xs);
+  font-family: var(--ff-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--stone);
+}
+.grape-grid p { margin: 0; }
 .appellation-choices {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -918,6 +936,7 @@ strong { font-weight: 700; }
 .appellation-choices h3 { margin-top: 0; }
 @media (max-width: 640px) {
   .appellation-choices { grid-template-columns: 1fr; }
+  .grape-grid { grid-template-columns: 1fr; }
 }
 .education__guide-link {
   max-width: 760px;
