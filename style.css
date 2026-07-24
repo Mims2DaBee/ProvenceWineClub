@@ -830,6 +830,72 @@ strong { font-weight: 700; }
   text-transform: uppercase;
   margin-top: var(--s-lg);
 }
+.guide-library {
+  max-width: 980px;
+}
+.guide-library-page .content-deck {
+  max-width: 660px;
+}
+.guide-library__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-md);
+  margin: var(--s-md) 0 var(--s-2xl);
+}
+.guide-library__card {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--s-lg);
+  color: var(--soft);
+  text-decoration: none;
+  background: var(--ivory);
+  border: 1px solid rgba(139,127,118,0.16);
+  transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.guide-library__card:hover,
+.guide-library__card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--rose);
+  background: #fbf5f2;
+}
+.guide-library__card--featured {
+  grid-column: 1 / -1;
+  min-height: 270px;
+  background: var(--stone);
+  border-color: var(--stone);
+}
+.content-page .guide-library__card--featured,
+.content-page .guide-library__card--featured h3,
+.content-page .guide-library__card--featured p {
+  color: var(--white);
+}
+.guide-library__eyebrow {
+  font-family: var(--ff-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+.guide-library__card h3 {
+  margin: var(--s-xs) 0;
+  font-family: var(--ff-display);
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--stone);
+}
+.guide-library__card p {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--soft);
+}
+.guide-library__card--featured .guide-library__eyebrow {
+  color: var(--blush);
+}
 .glossary-index {
   position: sticky;
   top: 88px;
@@ -1383,6 +1449,9 @@ strong { font-weight: 700; }
 }
 @media (max-width: 640px) {
   .education__grid { grid-template-columns: 1fr; }
+  .guide-library__grid { grid-template-columns: 1fr; }
+  .guide-library__card--featured { grid-column: auto; }
+  .guide-library__card { min-height: 210px; }
 }
 
 .edu-card {
