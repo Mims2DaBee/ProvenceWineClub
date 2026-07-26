@@ -896,6 +896,91 @@ strong { font-weight: 700; }
 .guide-library__card--featured .guide-library__eyebrow {
   color: var(--blush);
 }
+
+/* ===== Provence Wine Map Guide ===== */
+.wine-map {
+  margin: var(--s-xl) 0 var(--s-2xl);
+}
+.wine-map a {
+  display: block;
+  border: 1px solid rgba(75, 67, 61, 0.14);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--white);
+}
+.wine-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.wine-map figcaption {
+  margin-top: var(--s-sm);
+  font-family: var(--ff-sans);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+.map-route,
+.map-designations {
+  display: grid;
+  gap: var(--s-md);
+  margin: var(--s-lg) 0 var(--s-xl);
+}
+.map-route {
+  grid-template-columns: repeat(3, 1fr);
+}
+.map-designations {
+  grid-template-columns: repeat(2, 1fr);
+}
+.map-route section,
+.map-designations section {
+  padding: var(--s-lg);
+  border: 1px solid rgba(75, 67, 61, 0.12);
+  border-radius: 4px;
+  background: var(--ivory);
+}
+.map-route span {
+  display: block;
+  margin-bottom: var(--s-xs);
+  font-family: var(--ff-sans);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+.map-route h3,
+.map-designations h3 {
+  margin-top: 0;
+}
+.map-route p,
+.map-designations p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .map-route,
+  .map-designations {
+    grid-template-columns: 1fr;
+  }
+  .wine-map {
+    margin-left: calc(var(--s-md) * -1);
+    margin-right: calc(var(--s-md) * -1);
+  }
+  .wine-map a {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    overflow-x: auto;
+  }
+  .wine-map img {
+    width: 760px;
+    max-width: none;
+  }
+  .wine-map figcaption {
+    padding: 0 var(--s-md);
+  }
+}
 .glossary-index {
   position: sticky;
   top: 88px;

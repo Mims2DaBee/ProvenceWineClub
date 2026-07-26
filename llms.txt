@@ -21,6 +21,7 @@
 
 - [Provence Wine Guide Library](https://provencewineclub.com.au/guides/): the complete topic index and recommended learning path for regions, grapes, rosé, labels, tasting and food pairing.
 - [Provence Wine in Australia](https://provencewineclub.com.au/guides/provence-wine-australia.html): the primary Australian starting point for Provence rosé, red and white styles, appellations, label terms, buying, storage and serving.
+- [Provence Wine Map](https://provencewineclub.com.au/guides/provence-wine-map.html): visual orientation to the principal appellations, the three Vins de Provence AOPs, five Côtes de Provence terroir designations and wider-region geography.
 - [How to Choose Provence Rosé in Australia](https://provencewineclub.com.au/guides/how-to-choose-provence-rose.html): an independent, occasion-led buying method covering appellation, producer, vintage, importer, storage and common bottle-selection mistakes.
 - [Provence Wine Appellations Compared](https://provencewineclub.com.au/guides/provence-wine-appellations.html): decision-oriented comparison of nine Provence appellations, style clues, label distinctions and food occasions.
 - [Provence Wine Grapes Explained](https://provencewineclub.com.au/guides/provence-wine-grapes.html): Grenache, Cinsault, Mourvèdre, Syrah, Tibouren, Rolle and other varieties, with their roles in rosé, red and white blends and Australian name equivalents.
@@ -36,6 +37,7 @@
 ## Concise facts
 
 - The three appellations represented by Vins de Provence are Côtes de Provence, Coteaux d'Aix-en-Provence and Coteaux Varois en Provence.
+- The five additional geographical designations within Côtes de Provence are Sainte-Victoire, Fréjus, La Londe, Pierrefeu and Notre-Dame des Anges.
 - Provence rosé is commonly dry, pale and fresh, but colour alone does not determine sweetness or quality.
 - Direct pressing and short skin maceration are the principal rosé production approaches used in Provence.
 - Provence rosé is usually blended; important grapes include Grenache, Cinsault, Syrah, Mourvèdre and Tibouren.

@@ -47,7 +47,7 @@
 
   <text class="zone-name" x="260" y="408">Coteaux d'Aix-en-Provence</text>
   <text class="zone-name" x="650" y="456">Coteaux Varois en Provence</text>
-  <text class="zone-name" x="870" y="470">Cotes de Provence</text>
+  <text class="zone-name" x="870" y="470">Côtes de Provence</text>
   <text class="zone-name" x="585" y="255">Coteaux de Pierrevert</text>
   <text class="zone-name" x="165" y="295">Les Baux-de-Provence</text>
   <text class="zone-name" x="664" y="602">Bandol</text>
@@ -56,10 +56,11 @@
   <text class="zone-name" x="1178" y="320">Bellet</text>
 
   <text class="label" x="880" y="744">Sub-zones</text>
-  <text class="legend-s" x="880" y="774">Cotes de Provence Sainte-Victoire</text>
-  <text class="legend-s" x="880" y="800">Cotes de Provence Frejus</text>
-  <text class="legend-s" x="880" y="826">Cotes de Provence Pierrefeu</text>
-  <text class="legend-s" x="880" y="852">Cotes de Provence La Londe</text>
+  <text class="legend-s" x="880" y="766">Côtes de Provence Sainte-Victoire</text>
+  <text class="legend-s" x="880" y="790">Côtes de Provence Fréjus</text>
+  <text class="legend-s" x="880" y="814">Côtes de Provence Pierrefeu</text>
+  <text class="legend-s" x="880" y="838">Côtes de Provence La Londe</text>
+  <text class="legend-s" x="880" y="862">Côtes de Provence Notre-Dame des Anges</text>
 
   <g transform="translate(1120 70)">
     <circle cx="96" cy="96" r="90" fill="#f8f2ec" stroke="#1f1b19" stroke-width="2"/>
