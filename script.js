@@ -10,7 +10,35 @@
   const contactForms = document.querySelectorAll('.contact__form[data-form-type]');
   const turnstileWidgets = document.querySelectorAll('[data-turnstile-widget]');
   const newsletterModal = document.querySelector('[data-newsletter-modal]');
+  const brandFilm = document.querySelector('.brand-film__video');
+  const brandFilmSound = document.querySelector('.brand-film__sound');
   const newsletterModalDismissedKey = 'pwc-newsletter-modal-dismissed';
+
+  /* ===== Brand film sound ===== */
+  if (brandFilm && brandFilmSound) {
+    const soundIcon = brandFilmSound.querySelector('.brand-film__sound-icon');
+    const soundLabel = brandFilmSound.querySelector('.brand-film__sound-label');
+
+    brandFilmSound.addEventListener('click', async () => {
+      const turnSoundOn = brandFilm.muted;
+      brandFilm.muted = !turnSoundOn;
+
+      if (turnSoundOn) {
+        brandFilm.volume = 1;
+        try {
+          await brandFilm.play();
+        } catch (err) {
+          brandFilm.muted = true;
+        }
+      }
+
+      const soundIsOn = !brandFilm.muted;
+      brandFilmSound.setAttribute('aria-pressed', String(soundIsOn));
+      brandFilmSound.setAttribute('aria-label', soundIsOn ? 'Turn video sound off' : 'Turn video sound on');
+      if (soundIcon) soundIcon.textContent = soundIsOn ? '🔊' : '🔇';
+      if (soundLabel) soundLabel.textContent = soundIsOn ? 'Sound off' : 'Sound on';
+    });
+  }
 
   /* ===== Nav scroll ===== */
   const onScroll = () => {
