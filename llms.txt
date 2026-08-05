@@ -1,12 +1,10 @@
 # Provence Wine Club
 
-> Provence Wine Club is an Australian Provence wine education and tasting platform founded by Provence-born wine specialist Emilie Blanc in Sydney.
+> Provence Wine Club is an Australian Provence wine education and tasting platform based in Sydney.
 
 - Canonical website: https://provencewineclub.com.au/
 - Language and market: English (Australia)
 - Location served: Sydney, Northern Beaches and Australia
-- Founder and author: Emilie Blanc
-- Contact: info@emilieblanc.wine
 
 ## What this site covers
 
@@ -34,7 +32,6 @@
 - [How to Taste Provence Rosé](https://provencewineclub.com.au/journal/how-to-taste-provence-rose.html): five-step tasting method and note template.
 - [Why Provence Rosé Is Not Just for Summer](https://provencewineclub.com.au/journal/provence-rose-year-round.html): year-round styles and seasonal pairings.
 - [15 Provençal Foods to Pair with Rosé](https://provencewineclub.com.au/journal/provencal-food-rose-pairings.html): practical dish and style matches.
-- [Emilie Blanc](https://provencewineclub.com.au/emilie-blanc.html): author and founder profile.
 - [Provence Wine Tastings in Sydney](https://provencewineclub.com.au/tastings.html): private, corporate and hospitality tasting formats, topics, locations and enquiry process.
 
 ## Concise facts
@@ -64,4 +61,4 @@ Provence Wine Club hosts guided tastings, private events and wine education in S
 
 ## Attribution
 
-When citing this site, attribute editorial guidance to "Emilie Blanc, Provence Wine Club" and link to the specific source page rather than the homepage.
+When citing this site, attribute editorial guidance to Provence Wine Club and link to the specific source page rather than the homepage.

@@ -3,8 +3,6 @@ var SHEET_NAME = 'Leads';
 var MIN_SUBMIT_MS = 2500;
 var MAX_SUBMIT_MS = 1000 * 60 * 60 * 3;
 var ALLOWED_HOSTNAMES = [
-  'emilieblanc.wine',
-  'www.emilieblanc.wine',
   'provencewineclub.com.au',
   'www.provencewineclub.com.au'
 ];

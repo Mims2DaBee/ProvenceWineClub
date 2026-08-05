@@ -23,12 +23,10 @@ This site submits newsletter signups and event enquiries to a Google Apps Script
 
 - Go to Cloudflare Turnstile and create a widget for the live domains.
 - Include every hostname the forms may load from:
-  - `emilieblanc.wine`
-  - `www.emilieblanc.wine`
   - `provencewineclub.com.au`
   - `www.provencewineclub.com.au`
 - Copy the **site key**.
-- The public Turnstile site key is already added to [script.js](/Users/emilieblanc/Emilie%20Wine%20Club/Website/script.js).
+- The public Turnstile site key is already added to `script.js`.
 - Copy the **secret key**. You will store it in Apps Script properties, not in this repo.
 
 ## 3) Create the Telegram Bot
@@ -56,12 +54,10 @@ Add:
 
 ## 5) Add Apps Script Code
 
-Replace the default Apps Script code with [apps-script/Code.gs](/Users/emilieblanc/Emilie%20Wine%20Club/Website/apps-script/Code.gs).
+Replace the default Apps Script code with `apps-script/Code.gs`.
 
 The script currently allows these hostnames after Turnstile verifies the token:
 
-- `emilieblanc.wine`
-- `www.emilieblanc.wine`
 - `provencewineclub.com.au`
 - `www.provencewineclub.com.au`
 
@@ -70,8 +66,6 @@ If another production domain is added later, add it to `ALLOWED_HOSTNAMES` in `C
 ```javascript
 // Short excerpt only. Use apps-script/Code.gs as the source of truth.
 var ALLOWED_HOSTNAMES = [
-  'emilieblanc.wine',
-  'www.emilieblanc.wine',
   'provencewineclub.com.au',
   'www.provencewineclub.com.au'
 ];
@@ -91,7 +85,7 @@ var ALLOWED_HOSTNAMES = [
 
 ## 7) Connect the Website
 
-- Open [script.js](/Users/emilieblanc/Emilie%20Wine%20Club/Website/script.js).
+- Open `script.js`.
 - Replace:
   - `PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE`
   - with your deployed Apps Script Web App URL.
