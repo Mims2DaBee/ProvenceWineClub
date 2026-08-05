@@ -18,20 +18,12 @@
   if (brandFilm && brandFilmSound) {
     const soundIcon = brandFilmSound.querySelector('.brand-film__sound-icon');
     const soundLabel = brandFilmSound.querySelector('.brand-film__sound-label');
-    let filmInView = false;
 
-    const updateSoundControl = () => {
-      const soundIsOn = !brandFilm.muted;
-      brandFilmSound.setAttribute('aria-pressed', String(soundIsOn));
-      brandFilmSound.setAttribute('aria-label', soundIsOn ? 'Turn video sound off' : 'Turn video sound on');
-      if (soundIcon) soundIcon.textContent = soundIsOn ? '🔊' : '🔇';
-      if (soundLabel) soundLabel.textContent = soundIsOn ? 'Sound off' : 'Sound on';
-    };
+    brandFilmSound.addEventListener('click', async () => {
+      const turnSoundOn = brandFilm.muted;
+      brandFilm.muted = !turnSoundOn;
 
-    const setFilmSound = async (soundOn) => {
-      brandFilm.muted = !soundOn;
-
-      if (soundOn) {
+      if (turnSoundOn) {
         brandFilm.volume = 1;
         try {
           await brandFilm.play();
@@ -40,28 +32,12 @@
         }
       }
 
-      updateSoundControl();
-    };
-
-    brandFilmSound.addEventListener('click', () => {
-      setFilmSound(brandFilm.muted);
+      const soundIsOn = !brandFilm.muted;
+      brandFilmSound.setAttribute('aria-pressed', String(soundIsOn));
+      brandFilmSound.setAttribute('aria-label', soundIsOn ? 'Turn video sound off' : 'Turn video sound on');
+      if (soundIcon) soundIcon.textContent = soundIsOn ? '🔊' : '🔇';
+      if (soundLabel) soundLabel.textContent = soundIsOn ? 'Sound off' : 'Sound on';
     });
-
-    if ('IntersectionObserver' in window) {
-      const filmSoundObserver = new IntersectionObserver(([entry]) => {
-        filmInView = entry.isIntersecting && entry.intersectionRatio >= 0.45;
-        setFilmSound(filmInView);
-      }, { threshold: [0, 0.45] });
-
-      filmSoundObserver.observe(brandFilm);
-
-      const enableSoundDuringScroll = () => {
-        if (filmInView && brandFilm.muted) setFilmSound(true);
-      };
-
-      window.addEventListener('wheel', enableSoundDuringScroll, { passive: true });
-      window.addEventListener('touchmove', enableSoundDuringScroll, { passive: true });
-    }
   }
 
   /* ===== Nav scroll ===== */
