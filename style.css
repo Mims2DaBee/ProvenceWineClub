@@ -616,7 +616,8 @@ strong { font-weight: 700; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: clamp(250px, 34vh, 360px);
+  /* Keep the opening copy clear of the large fixed homepage lockup. */
+  padding-top: clamp(380px, 46vh, 460px);
   padding-bottom: clamp(5rem, 12vh, 8rem);
   background: linear-gradient(180deg, #f7f3ef 0%, #fdfbf9 100%);
 }
@@ -665,9 +666,57 @@ strong { font-weight: 700; }
 .hero .btn {
   padding: 0.9em 1.8em;
 }
+
+/* ===== Brand Film ===== */
+.brand-film {
+  padding: clamp(1rem, 2.5vw, 2rem);
+  background: var(--cream);
+}
+.brand-film__frame {
+  position: relative;
+  width: 100%;
+  min-height: clamp(420px, 68vw, 820px);
+  overflow: hidden;
+  background: #392b27;
+}
+.brand-film__video,
+.brand-film__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.brand-film__video { object-fit: cover; }
+.brand-film__overlay {
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(20, 13, 10, 0.03) 45%, rgba(20, 13, 10, 0.58) 100%);
+}
+.brand-film__caption {
+  position: absolute;
+  z-index: 1;
+  left: clamp(1.5rem, 5vw, 5rem);
+  right: clamp(1.5rem, 5vw, 5rem);
+  bottom: clamp(1.5rem, 4vw, 4rem);
+  color: #fff;
+}
+.brand-film__caption p {
+  max-width: 720px;
+  margin: 0.65rem 0 0;
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4.8vw, 4.8rem);
+  font-weight: 300;
+  line-height: 0.98;
+}
+@media (max-width: 640px) {
+  .brand-film { padding: 0.75rem; }
+  .brand-film__frame { min-height: 70vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-film__video { display: none; }
+}
 @media (max-width: 600px) {
   .hero {
-    padding-top: 12.5rem;
+    padding-top: 17rem;
     padding-bottom: 4.5rem;
   }
   .hero__content { padding: 0 var(--s-sm); }
