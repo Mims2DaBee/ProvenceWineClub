@@ -472,7 +472,7 @@ strong { font-weight: 700; }
 
 .nav__drawer-inner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--s-xl);
   max-width: 1000px;
   margin: 0 auto;
