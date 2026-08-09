@@ -13,6 +13,19 @@
     "formats": ["image/avif", "image/webp"],
     "dangerouslyAllowSVG": false
   },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.provencewineclub.com.au"
+        }
+      ],
+      "destination": "https://provencewineclub.com.au/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
