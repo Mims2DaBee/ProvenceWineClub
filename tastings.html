@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Provence Wine Tastings Sydney | Private & Corporate</title>
   <meta name="description" content="Book a guided Provence wine tasting in Sydney or the Northern Beaches for a private group, corporate team or hospitality session.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://provencewineclub.com.au/tastings.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="favicon.svg">
@@ -32,6 +32,18 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": "https://provencewineclub.com.au/tastings.html#webpage",
+        "url": "https://provencewineclub.com.au/tastings.html",
+        "name": "Provence Wine Tastings in Sydney",
+        "description": "Guided private, corporate and hospitality Provence wine tastings in Sydney and the Northern Beaches.",
+        "inLanguage": "en-AU",
+        "isPartOf": {"@id": "https://provencewineclub.com.au/#website"},
+        "about": {"@id": "https://provencewineclub.com.au/tastings.html#service"},
+        "primaryImageOfPage": {"@type": "ImageObject", "url": "https://provencewineclub.com.au/assets/dining-rose-vineyard.png"},
+        "dateModified": "2026-08-12"
+      },
+      {
         "@type": "Service",
         "@id": "https://provencewineclub.com.au/tastings.html#service",
         "name": "Provence wine tastings in Sydney",
@@ -47,7 +59,16 @@
           {"@type": "Audience", "audienceType": "Private groups"},
           {"@type": "Audience", "audienceType": "Corporate teams"},
           {"@type": "Audience", "audienceType": "Hospitality professionals"}
-        ]
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Provence wine tasting formats",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Private Provence wine tasting", "description": "A guided Provence wine experience for friends, celebrations and wine-curious private groups in Sydney."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Corporate Provence wine experience", "description": "An inclusive guided tasting for Sydney teams and client events."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hospitality Provence wine education", "description": "Practical Provence wine education for Sydney venue and hospitality teams."}}
+          ]
+        }
       },
       {
         "@type": "BreadcrumbList",
