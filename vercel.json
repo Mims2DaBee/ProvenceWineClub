@@ -30,6 +30,17 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.provencewineclub.com.au"
+        }
+      ],
+      "destination": "https://provencewineclub.com.au/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -41,6 +52,17 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "emilieblanc.wine"
+        }
+      ],
+      "destination": "https://provencewineclub.com.au/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -49,6 +71,17 @@
         }
       ],
       "destination": "https://provencewineclub.com.au/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.emilieblanc.wine"
+        }
+      ],
+      "destination": "https://provencewineclub.com.au/",
       "permanent": true
     },
     {
