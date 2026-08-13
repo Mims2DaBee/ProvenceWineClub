@@ -39,6 +39,28 @@
       ],
       "destination": "https://provencewineclub.com.au/:path*",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "emilieblanc.wine"
+        }
+      ],
+      "destination": "https://provencewineclub.com.au/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.emilieblanc.wine"
+        }
+      ],
+      "destination": "https://provencewineclub.com.au/:path*",
+      "permanent": true
     }
   ],
   "headers": [
