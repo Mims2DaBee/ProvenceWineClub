@@ -979,6 +979,167 @@ strong { font-weight: 700; }
   color: var(--blush);
 }
 
+/* ===== Printable Wine Tasting Sheet ===== */
+.tasting-sheet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-md);
+  align-items: center;
+  margin: var(--s-xl) 0;
+}
+.tasting-sheet-actions .btn { color: var(--white); }
+.wine-worksheet {
+  max-width: 920px;
+  margin: var(--s-xl) auto var(--s-2xl);
+  padding: clamp(1.25rem, 4vw, 3rem);
+  color: var(--stone);
+  background: #fffdf9;
+  border: 1px solid rgba(139,127,118,0.24);
+  box-shadow: 0 18px 50px rgba(75,67,61,0.08);
+}
+.wine-worksheet__masthead {
+  padding-bottom: var(--s-lg);
+  margin-bottom: var(--s-lg);
+  text-align: center;
+  border-bottom: 2px solid var(--stone);
+}
+.content-page .wine-worksheet__masthead p {
+  margin: 0 0 0.2rem;
+  font-family: var(--ff-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.content-page .wine-worksheet__masthead h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+.wine-worksheet__masthead span {
+  font-family: var(--ff-sans);
+  font-size: 0.72rem;
+  color: var(--soft);
+}
+.wine-worksheet fieldset {
+  padding: 0;
+  margin: 0 0 var(--s-lg);
+  border: 0;
+}
+.wine-worksheet legend {
+  width: 100%;
+  padding-bottom: 0.4rem;
+  margin-bottom: var(--s-md);
+  font-family: var(--ff-display);
+  font-size: 1.55rem;
+  color: var(--stone);
+  border-bottom: 1px solid rgba(139,127,118,0.25);
+}
+.wine-worksheet label {
+  display: grid;
+  gap: 0.35rem;
+  font-family: var(--ff-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--warm);
+  text-transform: uppercase;
+}
+.wine-worksheet input[type="text"],
+.wine-worksheet textarea {
+  width: 100%;
+  padding: 0.7rem 0.25rem;
+  font: 400 0.92rem/1.45 var(--ff-body);
+  color: var(--stone);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(75,67,61,0.34);
+  border-radius: 0;
+  resize: vertical;
+}
+.wine-worksheet input:focus,
+.wine-worksheet textarea:focus {
+  outline: 2px solid var(--rose);
+  outline-offset: 3px;
+}
+.wine-worksheet__grid {
+  display: grid;
+  gap: var(--s-md);
+}
+.wine-worksheet__grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.wine-worksheet__grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.content-page .wine-worksheet__prompt {
+  margin: -0.5rem 0 var(--s-sm);
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--mid);
+}
+.wine-worksheet__checks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-bottom: var(--s-md);
+}
+.wine-worksheet__checks label {
+  display: flex;
+  grid-template-columns: none;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem;
+  background: var(--ivory);
+  text-transform: none;
+}
+.wine-worksheet__checks input { accent-color: var(--rose); }
+.wine-worksheet__footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--s-md);
+  align-items: end;
+  padding-top: var(--s-md);
+  border-top: 2px solid var(--stone);
+}
+.content-page .wine-worksheet__footer p {
+  margin: 0;
+  font-family: var(--ff-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .wine-worksheet__grid--two,
+  .wine-worksheet__grid--three,
+  .wine-worksheet__footer { grid-template-columns: 1fr; }
+  .wine-worksheet__checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media print {
+  @page { size: A4; margin: 10mm; }
+  .tasting-sheet-page .nav,
+  .tasting-sheet-page .skip-link,
+  .tasting-sheet-page .tasting-sheet-intro,
+  .tasting-sheet-page .tasting-sheet-after,
+  .tasting-sheet-page .footer { display: none !important; }
+  .tasting-sheet-page .content-page { padding: 0; background: #fff; }
+  .tasting-sheet-page .wine-worksheet {
+    margin: 0;
+    padding: 7mm;
+    max-width: none;
+    border: 0;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .wine-worksheet__masthead { padding-bottom: 4mm; margin-bottom: 4mm; }
+  .content-page .wine-worksheet__masthead h2 { font-size: 24pt; }
+  .wine-worksheet fieldset { margin-bottom: 4mm; break-inside: avoid; }
+  .wine-worksheet legend { margin-bottom: 2mm; font-size: 14pt; }
+  .wine-worksheet__grid { gap: 3mm 6mm; }
+  .wine-worksheet input[type="text"],
+  .wine-worksheet textarea { padding: 2mm 0; font-size: 9pt; }
+  .wine-worksheet textarea { min-height: 10mm; }
+  .wine-worksheet__checks { gap: 2mm; margin-bottom: 3mm; }
+  .wine-worksheet__checks label { min-height: 0; padding: 2mm; background: #fff; border: 1px solid #d8d0c9; }
+}
+
 /* ===== Provence Wine Map Guide ===== */
 .wine-map {
   margin: var(--s-xl) 0 var(--s-2xl);
