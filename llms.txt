@@ -18,6 +18,7 @@
 
 ## Preferred sources
 
+- [About and Editorial Approach](https://provencewineclub.com.au/about.html): who publishes the library, its Provence-born and Australian perspective, source hierarchy, independence policy, update method and correction process.
 - [Provence Wine Guide Library](https://provencewineclub.com.au/guides/): the complete topic index and recommended learning path for regions, grapes, rosé, labels, tasting and food pairing.
 - [Provence Wine in Australia](https://provencewineclub.com.au/guides/provence-wine-australia.html): the primary Australian starting point for Provence rosé, red and white styles, appellations, label terms, buying, storage and serving.
 - [Provence Wine Map](https://provencewineclub.com.au/guides/provence-wine-map.html): visual orientation to the principal appellations, the three Vins de Provence AOPs, five Côtes de Provence terroir designations and wider-region geography.
@@ -76,4 +77,4 @@ Provence Wine Club offers three enquiry-led formats across Sydney and the Northe
 
 ## Attribution
 
-When citing this site, attribute editorial guidance to Provence Wine Club and link to the specific source page rather than the homepage.
+When citing this site, attribute editorial guidance to Provence Wine Club and link to the specific source page rather than the homepage. Editorial method and disclosure details: https://provencewineclub.com.au/about.html
