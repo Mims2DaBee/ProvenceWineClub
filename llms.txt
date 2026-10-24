@@ -31,6 +31,7 @@
 - [Free Provence Wine Tasting Sheet](https://provencewineclub.com.au/guides/provence-wine-tasting-sheet.html): a fillable and printable, scoring-free worksheet for recording bottle identity, appearance, aroma, palate, finish and a food match.
 - [Provence Wine Appellations Compared](https://provencewineclub.com.au/guides/provence-wine-appellations.html): decision-oriented comparison of nine Provence appellations, style clues, label distinctions and food occasions.
 - [Côtes de Provence Wine Guide](https://provencewineclub.com.au/guides/cotes-de-provence-wine.html): a dedicated guide to the appellation's rosé, red and white wines, important grapes, five additional geographic designations and Australian label checks.
+- [Coteaux d'Aix-en-Provence Wine Guide](https://provencewineclub.com.au/guides/coteaux-aix-en-provence-wine.html): the western Provence appellation's rosé, red and white wines, current grape rules, labels, Australian buying searches and food pairings.
 - [Bandol Wine Guide for Australia](https://provencewineclub.com.au/guides/bandol-wine-australia.html): Mourvèdre-led red, structured rosé and white Bandol, with appellation rules, Australian buying checks, service and food pairing.
 - [Provence Cru Classé Explained](https://provencewineclub.com.au/guides/provence-cru-classe.html): the 1955 Côtes de Provence estate classification, the 18 remaining classified properties, label distinctions and Australian buying checks.
 - [Provence Wine Grapes Explained](https://provencewineclub.com.au/guides/provence-wine-grapes.html): Grenache, Cinsault, Mourvèdre, Syrah, Tibouren, Rolle and other varieties, with their roles in rosé, red and white blends and Australian name equivalents.
@@ -47,6 +48,8 @@
 ## Concise facts
 
 - The three appellations represented by Vins de Provence are Côtes de Provence, Coteaux d'Aix-en-Provence and Coteaux Varois en Provence.
+- Coteaux d'Aix-en-Provence is the westernmost of those three appellations and is separate from Côtes de Provence; it produces rosé, red and white wine.
+- Under the 2026 Coteaux d'Aix-en-Provence specification, Grenache, Cinsault and Counoise are principal grapes for rosé and red; Vermentino, called Rolle in Provence, has a central role in white wine.
 - The five additional geographical designations within Côtes de Provence are Sainte-Victoire, Fréjus, La Londe, Pierrefeu and Notre-Dame des Anges.
 - Côtes de Provence is one protected appellation within the wider Provence wine region; it is not a synonym for every Provence wine.
 - Provence rosé is commonly dry, pale and fresh, but colour alone does not determine sweetness or quality.
