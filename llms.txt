@@ -34,6 +34,7 @@
 - [Coteaux d'Aix-en-Provence Wine Guide](https://provencewineclub.com.au/guides/coteaux-aix-en-provence-wine.html): the western Provence appellation's rosé, red and white wines, current grape rules, labels, Australian buying searches and food pairings.
 - [Coteaux Varois en Provence Wine Guide](https://provencewineclub.com.au/guides/coteaux-varois-en-provence-wine.html): the high-altitude inland appellation's limestone geography, rosé, red and white wines, grapes, labels and Australian buying advice.
 - [Bandol Wine Guide for Australia](https://provencewineclub.com.au/guides/bandol-wine-australia.html): Mourvèdre-led red, structured rosé and white Bandol, with appellation rules, Australian buying checks, service and food pairing.
+- [Cassis Wine Guide for Australia](https://provencewineclub.com.au/guides/cassis-wine-australia.html): the coastal appellation's Marsanne–Clairette-led white wines, rosé and red, labels, Australian buying searches, service and seafood pairing.
 - [Provence Cru Classé Explained](https://provencewineclub.com.au/guides/provence-cru-classe.html): the 1955 Côtes de Provence estate classification, the 18 remaining classified properties, label distinctions and Australian buying checks.
 - [Provence Wine Grapes Explained](https://provencewineclub.com.au/guides/provence-wine-grapes.html): Grenache, Cinsault, Mourvèdre, Syrah, Tibouren, Rolle and other varieties, with their roles in rosé, red and white blends and Australian name equivalents.
 - [Provence Red and White Wine](https://provencewineclub.com.au/guides/provence-red-white-wine.html): the primary guide to Bandol red, Cassis white and other Provence appellations, grapes, Australian buying searches, serving and food pairing beyond rosé.
@@ -76,6 +77,8 @@
 - “Natural wine” is not a regulated French or EU wine category; verify a named charter or specific production practices.
 - Provence also produces serious red and white wine: Bandol is a key reference for Mourvèdre-led red, while Cassis is a key reference for dry Marsanne–Clairette-based white.
 - Bandol is a separate Provence AOP producing red, rosé and white wine; its red wines require at least 18 months of maturation in barrels or large wooden foudres under the appellation specification.
+- Cassis is a separate Provence AOP confined to the commune of Cassis; the official profile reports about 70% white wine, 28% rosé and 2% red, with Marsanne and Clairette as the principal white grapes.
+- Cassis wine is grape wine named for the Mediterranean town and appellation; it is unrelated to crème de cassis, the blackcurrant liqueur.
 - Rolle is the Provençal name for Vermentino; Australian buyers may find more Provence white wine by searching both names alongside the appellation.
 - Provence wine country is too dispersed for one rushed cellar-door loop; travellers should group visits by a neighbouring wine area and confirm estate access directly.
 - A useful wine note separates label facts from sensory observations, records balance and finish, and explains the conclusion without relying on a numerical score.
